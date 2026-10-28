@@ -1,0 +1,7 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import './globals.css';
+export const metadata: Metadata = { title: 'Prime Care Services | Home Services in Gurugram', description: 'Book AC repair, refrigerator repair and electrical services in Gurugram.' };
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en"><body><header className="site-header"><div className="container nav-wrap"><Link href="/" className="brand"><span className="brand-mark">✦</span><span>Prime Care <small>SERVICES</small></span></Link><nav><Link href="/">Home</Link><Link href="/services">Services</Link><Link href="/book" className="nav-cta">Book Service</Link></nav></div></header>{children}<footer className="footer"><div className="container footer-inner"><div><Link href="/" className="brand footer-brand"><span className="brand-mark">✦</span><span>Prime Care <small>SERVICES</small></span></Link><p>Reliable home services, right when you need them.</p></div><div><strong>Services</strong><Link href="/services">AC & Refrigerator Repair</Link><Link href="/services">Electrical Services</Link><Link href="/book">Book a Service</Link></div><div><strong>Service area</strong><span>{process.env.NEXT_PUBLIC_SERVICE_AREA || 'Gurugram, Haryana'}</span><span>Mon–Sun · By appointment</span></div></div><div className="copyright">© {new Date().getFullYear()} Prime Care Services. All rights reserved.</div></footer></body></html>
+}
